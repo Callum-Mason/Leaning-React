@@ -1,0 +1,1 @@
+const myArticle = <article>I'm an article</article>;
