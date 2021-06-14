@@ -89,6 +89,7 @@ const myTeam = {
 1. Create a JSX `<article></article>` element. Save it in a variable named myArticle.
 
 ## Attributes In JSX
+
 JSX elements can have attributes, just like HTML elements can.
 
 A JSX attribute is written using HTML-like syntax: a name, followed by an equals sign, followed by a value. The value should be wrapped in quotes, like this:
@@ -206,3 +207,155 @@ If you notice that a JSX expression has multiple outer elements, the solution is
 1. Your friend’s blog is down! He’s asked you to fix it.
    You immediately diagnose the problem: a JSX expression with multiple outer elements.
    Repair your friend’s broken code by wrapping their JSX in a `<div></div>`.
+
+## Rendering JSX
+
+You’ve learned how to write JSX elements! Now it’s time to learn how to render them.
+
+To render a JSX expression means to make it appear onscreen.
+
+### Instructions app7.js
+
+1. The following code will render a JSX expression:
+
+   ```jsx
+   `ReactDOM`.render(<h1>Hello world</h1>, document.getElementById('app'))
+   ```
+
+   Starting on line 5, carefully copy the code into the code editor. We’ll go over how it works in the next exercise.
+   JavaScript is case-sensitive, so make sure to capitalize `ReactDOM` correctly!
+
+## `ReactDOM`.render() I
+
+Let’s examine the code that you just wrote. Start in previous.js, on line 5, all the way to the left.
+
+You can see something called `ReactDOM`. What’s that?
+
+`ReactDOM` is the name of a JavaScript library. This library contains several React-specific methods, all of which deal with the DOM in some way or another.
+
+We’ll talk more later about how `ReactDOM` got into your file. For now, just understand that it’s yours to use.
+
+Move slightly to the right, and you can see one of `ReactDOM`‘s methods: `ReactDOM`.render().
+
+`ReactDOM.render()` is the most common way to render JSX. It takes a JSX expression, creates a corresponding tree of DOM nodes, and adds that tree to the DOM. That is the way to make a JSX expression appear onscreen.
+
+Move to the right a little more, and you come to this expression:
+
+```jsx
+<h1>Hello world</h1>
+```
+
+This is the first argument being passed to `ReactDO.render()`. `ReactDOM.render()`‘s first argument should be a JSX expression, and it will be rendered to the screen.
+
+We’ll discuss the second argument in the next exercise!
+
+### Instructions app8.js
+
+1. Select app.js.
+   Starting on line 5, call `ReactDOM.render()`.
+   Pass in this expression as a first argument:
+
+   ```jsx
+   <h1>Render me!</h1>
+   ```
+
+   Pass in this expression as a second argument:
+
+   ```jsx
+   document.getElementById('app')
+   ```
+
+## ReactDOM.render() II
+
+Move to the right a little more, and you will see this expression:
+
+```jsx
+document.getElementById('app')
+```
+
+You just learned that `ReactDOM.render()` makes its first argument appear onscreen. But where on the screen should that first argument appear?
+
+The first argument is appended to whatever element is selected by the second argument.
+
+In the code editor, select **index.html**. See if you can find an element that would be selected by `document.getElementById('app')`.
+
+That element acted as a container for `ReactDOM.render()`‘s first argument! At the end of the previous exercise, this appeared on the screen:
+
+```jsx
+<main id="app">
+  <h1>Render me!</h1>
+</main>
+```
+
+### Instructions app9.js & index9.html
+
+1. In **index.html**, replace this:
+
+   ```jsx
+   <main id="app"></main>
+   ```
+
+   with this span:
+
+   ```jsx
+   <span id="container"></span>
+   ```
+
+2. Select **app.js**.
+   You want `<h1>Render me!</h1>` to be appended to `<span id="container"></span>`.
+   On line 5, make that happen by changing the string passed to `document.getElementById()`.
+
+## Passing a Variable to ReactDOM.render()
+
+`ReactDOM.render()`‘s first argument should evaluate to a JSX expression, it doesn’t have to literally be a JSX expression.
+
+The first argument could also be a variable, so long as that variable evaluates to a JSX expression.
+
+In this example, we save a JSX expression as a variable named `toDoList`. We then pass `toDoList` as the first argument to `ReactDOM.render()`:
+
+```jsx
+const toDoList = (
+  <ol>
+    <li>Learn React</li>
+    <li>Become a Developer</li>
+  </ol>
+);
+ 
+ReactDOM.render(
+  toDoList, 
+  document.getElementById('app')
+);
+```
+
+### Instructions app10.js
+
+1. On line 5, declare a variable named myList. Set myList equal to a JSX `<ul></ul>` element. Wrap your `<ul></ul>` in parentheses.
+   Add several `<li></li>` elements in between your `<ul></ul>` tags. Put some text in each `<li></li>`. Use line breaks and indentation similar to the above example.
+
+2. At the bottom of the file, call `ReactDOM.render()`.
+   For `ReactDOM.render()`‘s first argument, pass in the variable myList.
+   For `ReactDOM.render()`‘s second argument, select an HTML element with an id of app.
+
+## The Virtual DOM
+
+One special thing about `ReactDOM.render()` is that it *only* updates DOM elements that have changed.
+
+That means that if you render the exact same thing twice in a row, the second render will do nothing:
+
+```jsx
+const hello = <h1>Hello world</h1>;
+// This will add "Hello world" to the screen:
+ReactDOM.render(hello, document.getElementById('app'));
+// This won't do anything at all:
+ReactDOM.render(hello, document.getElementById('app'));
+```
+
+This is significant! Only updating the necessary DOM elements is a large part of what makes React so successful.
+
+React accomplishes this thanks to something called the virtual DOM.
+
+## JSX Recap
+
+Congratulations! You’ve learned to create and render JSX elements! This is the first step towards becoming fluent in React.
+
+In the next lesson, you’ll learn some powerful things that you can do with JSX, as well as some common JSX issues and how to avoid them.
