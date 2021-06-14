@@ -120,7 +120,7 @@ const heading = <h1 className="large-heading">Codecademy</h1>;
 
 In JSX, empty elements must explicitly be closed using a closing slash at the end of their tag: `<tagName />`.
 
-A couple examples of empty element tags that must explicitly be closed include `<br> `and `<img>`.
+A couple examples of empty element tags that must explicitly be closed include `<br>`and `<img>`.
 
 ```jsx
 <br />
