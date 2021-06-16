@@ -16,9 +16,9 @@ However, the code also contains `<h1>Hello world</h1>`, which looks exactly like
 
 What’s going on?
 
-### Instructions - app1.js
+### Instructions - app1.jsx
 
-1. Copy the following line into app.js `const h1 = <h1>Hello world</h1>;`
+1. Copy the following line into app1.jsx `const h1 = <h1>Hello world</h1>;`
 
 ## The Mystery, Revealed
 
@@ -56,9 +56,9 @@ Here’s an example of a JSX element:
 
 This JSX element looks exactly like HTML! The only noticeable difference is that you would find it in a JavaScript file, instead of in an HTML file.
 
-### Instructions app2.js
+### Instructions app2.jsx
 
-1. In app.js, write a JSX `<p></p>` element containing the text, Hello world. Use the example code above as a guide.
+1. In app2.jsx, write a JSX `<p></p>` element containing the text, Hello world. Use the example code above as a guide.
 
 ## JSX Elements And Their Surroundings
 
@@ -84,7 +84,7 @@ const myTeam = {
 };
 ```
 
-### Instructions app3.js
+### Instructions app3.jsx
 
 1. Create a JSX `<article></article>` element. Save it in a variable named myArticle.
 
@@ -103,7 +103,7 @@ Here are some JSX elements with attributes:
 ```jsx
 <a href='http://www.example.com'>Welcome to the Web</a>;
 
-const title = <h1 id='title'>Introduction to React.js: Part I</h1>; 
+const title = <h1 id='title'>Introduction to React.jsx: Part I</h1>; 
  ```
 
 A single JSX element can have many attributes, just like in HTML:
@@ -112,7 +112,7 @@ A single JSX element can have many attributes, just like in HTML:
 const panda = <img src='images/panda.jpg' alt='panda' width='500px' height='500px' />;
 ```
 
-### Instructions app4.js
+### Instructions app4.jsx
 
 1. Declare a constant named p1.
    Set `p1` equal to a JSX `<p></p>` element. Write the word foo in between the `<p></p>` tags.
@@ -167,7 +167,7 @@ Nested JSX expressions can be saved as variables, passed to functions, etc., jus
  );
 ```
 
-### Instructions app5.js
+### Instructions app5.jsx
 
 1. Declare a new variable named myDiv. Set myDiv equal to a JSX `<div></div>` element.
    Wrap the `<div></div>` in parentheses, and use indentation and line breaks like in the examples. In between the `<div></div>` tags, nest an `<h1></h1>` containing the text Hello world.
@@ -202,7 +202,7 @@ It’s easy to forget about this rule, and end up with errors that are tough to 
 
 If you notice that a JSX expression has multiple outer elements, the solution is usually simple: wrap the JSX expression in a `<div></div>`.
 
-### Instructions app6.js
+### Instructions app6.jsx
 
 1. Your friend’s blog is down! He’s asked you to fix it.
    You immediately diagnose the problem: a JSX expression with multiple outer elements.
@@ -214,7 +214,7 @@ You’ve learned how to write JSX elements! Now it’s time to learn how to rend
 
 To render a JSX expression means to make it appear onscreen.
 
-### Instructions app7.js
+### Instructions app7.jsx
 
 1. The following code will render a JSX expression:
 
@@ -227,7 +227,7 @@ To render a JSX expression means to make it appear onscreen.
 
 ## `ReactDOM`.render() I
 
-Let’s examine the code that you just wrote. Start in previous.js, on line 5, all the way to the left.
+Let’s examine the code that you just wrote. Start in previous.jsx, on line 5, all the way to the left.
 
 You can see something called `ReactDOM`. What’s that?
 
@@ -249,9 +249,9 @@ This is the first argument being passed to `ReactDO.render()`. `ReactDOM.render(
 
 We’ll discuss the second argument in the next exercise!
 
-### Instructions app8.js
+### Instructions app8.jsx
 
-1. Select app.js.
+1. Select app8.jsx.
    Starting on line 5, call `ReactDOM.render()`.
    Pass in this expression as a first argument:
 
@@ -287,7 +287,7 @@ That element acted as a container for `ReactDOM.render()`‘s first argument! At
 </main>
 ```
 
-### Instructions app9.js & index9.html
+### Instructions app9.jsx & index9.html
 
 1. In **index.html**, replace this:
 
@@ -301,7 +301,7 @@ That element acted as a container for `ReactDOM.render()`‘s first argument! At
    <span id="container"></span>
    ```
 
-2. Select **app.js**.
+2. Select **app9.jsx**.
    You want `<h1>Render me!</h1>` to be appended to `<span id="container"></span>`.
    On line 5, make that happen by changing the string passed to `document.getElementById()`.
 
@@ -327,7 +327,7 @@ ReactDOM.render(
 );
 ```
 
-### Instructions app10.js
+### Instructions app10.jsx
 
 1. On line 5, declare a variable named myList. Set myList equal to a JSX `<ul></ul>` element. Wrap your `<ul></ul>` in parentheses.
    Add several `<li></li>` elements in between your `<ul></ul>` tags. Put some text in each `<li></li>`. Use line breaks and indentation similar to the above example.
